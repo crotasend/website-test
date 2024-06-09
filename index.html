@@ -1,12 +1,37 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Change Default Font</title>
+    <style>
+    	h1 {text-align: center;}
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: black; /* This ensures the text is visible */
+        }
+        form {text-align: center}
+    </style>
 </head>
-<body>
-    <h1>Welcome to My Website</h1>
-    <p>This is a simple HTML website.</p>
+<body style="background-color:#2e2c30;">
+<h1>Login</h1>
+    <form id="loginForm">
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            const password = document.getElementById('password').value;
+            if (password === 'sigmaohio7500') { 
+                window.location.href = 'main.html';
+            } else {
+                alert('Wrong password. That\'s not very sigma.');
+            }
+        });
+    </script>
 </body>
 </html>
